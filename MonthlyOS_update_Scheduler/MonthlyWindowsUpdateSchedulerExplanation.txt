@@ -1,0 +1,25 @@
+
+The PowerShell script 'MonthlyWindowsUpdateScheduler.ps1' automates the process of checking for and installing Windows updates on the 1st day of every month. Below is an explanation of the code and instructions on how to execute the script:
+
+Explanation:
+- The script first checks if it is running with Administrator privileges, which is required for installing updates and creating scheduled tasks.
+- It then checks if the 'PSWindowsUpdate' module is installed, which is necessary for managing Windows updates through PowerShell. If the module is not present, the script attempts to install it.
+- Next, the script sets up a new scheduled task. It uses the 'New-ScheduledTaskAction' cmdlet to define what the task will do, which is to run PowerShell commands for installing updates using the 'PSWindowsUpdate' module.
+- The 'New-ScheduledTaskTrigger' cmdlet is used to set the task to trigger on the 1st day of every month.
+- The 'New-ScheduledTaskPrincipal' cmdlet defines the security context in which the task is run, which is set to the SYSTEM account with the highest privileges.
+- Finally, the 'Register-ScheduledTask' cmdlet is used to create the task in Task Scheduler with the defined action, trigger, and principal.
+
+How to Execute the Script:
+1. Ensure you have downloaded 'MonthlyWindowsUpdateScheduler.ps1' to your local machine.
+2. Run PowerShell as an Administrator.
+3. Navigate to the directory where 'MonthlyWindowsUpdateScheduler.ps1' is located.
+4. Type './MonthlyWindowsUpdateScheduler.ps1' and press Enter to execute the script.
+
+Where to Locate the Script:
+- Place the script in a directory that is secure and where you typically store scripts or administrative tools, for example, 'C:\Scripts' or another directory of your choice.
+
+Triggering the Script:
+- The script does not need to be manually triggered each month. Once executed, it creates a scheduled task that will automatically trigger on the 1st day of every month.
+- You can find and manage this task in the Task Scheduler under the name 'MonthlyWindowsUpdate' should you wish to modify or delete it.
+
+Note: This script is intended for systems running PowerShell 5.0 or higher and requires the 'PSWindowsUpdate' module to function.
