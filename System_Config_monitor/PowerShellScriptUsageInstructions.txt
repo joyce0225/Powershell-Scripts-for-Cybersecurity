@@ -1,0 +1,40 @@
+
+Title: How to Use the System Configuration and Security Event Tracking PowerShell Script
+
+Filename: SystemConfigurationSecurityCheck.ps1
+
+1. Opening PowerShell as an Administrator
+   - Right-click on the PowerShell icon and select Run as Administrator. This step is crucial because the script performs checks that require administrator privileges.
+
+2. Executing the Script
+   - Navigate to the directory where the script is saved.
+   - Type the script name and press Enter:
+     .\SystemConfigurationSecurityCheck.ps1
+
+3. Understanding the Output
+   - Administrator Rights Verification: A warning will appear if the script is not run as an administrator.
+   - System Information Checks:
+     - The script will display the system version, the currently logged-in user, and the system's IP addresses.
+   - Windows Update Configuration Check:
+     - The script will indicate if auto-updates are enabled and list any missing critical and important updates.
+   - PowerShell Event Log Settings:
+     - (Placeholder section) This section will be used for checking PowerShell event log settings.
+   - PowerShell Configuration Settings:
+     - Displays the currently installed PowerShell version.
+   - Remote Access Configurations:
+     - (Placeholder section) This section will check for RDP settings.
+   - Local Administrator Accounts Check:
+     - Shows the number of local administrators on the system.
+   - Security Event Tracking:
+     - Lists the most recent failed login attempts (Event ID 4625). This section includes placeholders for detailed event analysis and XML template processing.
+
+4. Reviewing the Output
+   - The script outputs each check's results to the console. Review each section to understand the security and configuration status of the system.
+
+5. Taking Action
+   - Based on the script's findings, you may need to take action, such as updating the system, modifying configurations, or investigating suspicious activities.
+
+6. Customizing the Script
+   - If needed, you can customize the script to add more checks or modify existing ones. Ensure you have adequate knowledge of PowerShell scripting before making changes.
+
+Note: This script serves as a starting point for system checks and security monitoring. It is advisable to complement it with other security tools and practices for a more comprehensive approach to system security. Always test scripts in a non-production environment before deploying them in a live system.
