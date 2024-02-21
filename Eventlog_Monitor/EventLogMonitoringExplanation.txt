@@ -1,0 +1,23 @@
+
+Event Log Monitoring Script Logic:
+
+1. Define the Computer and Namespace:
+   - The script targets the local computer (localhost) and uses the WMI namespace 'root\subscription' for event monitoring.
+
+2. Create an Event Filter:
+   - An instance of the __EventFilter class is created using Set-WmiInstance.
+   - The filter is set to monitor modifications to the 'browser' service on the system.
+   - The query language used is WQL (WMI Query Language).
+
+3. Define the Script and Properties for the Event Consumer:
+   - An instance of the ActiveScriptEventConsumer class is created.
+   - This consumer uses a VBScript defined by the user (path needs to be specified in the script).
+   - The script is responsible for handling the events detected by the filter.
+
+4. Bind the Filter to the Consumer:
+   - The __FilterToConsumerBinding class is used to bind the event filter to the event consumer.
+   - This ensures that when the specified event occurs, the consumer script is triggered.
+
+5. Optional Check:
+   - The script includes optional commands to check the created instances of __EventFilter, ActiveScriptEventConsumer, and __FilterToConsumerBinding.
+   - This is useful for verifying that the monitoring setup is correctly configured.
